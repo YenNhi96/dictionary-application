@@ -1,4 +1,5 @@
 import "./App.css";
+import Search from "./Search.js";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <div className="container">
         <strong>Landscape</strong>
         <p>/ˈlænd.skeɪp/</p>
+        <Search />
       </div>
     </div>
   );

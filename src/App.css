@@ -3,5 +3,14 @@
   border: 1px solid rgb(193, 191, 191);
   border-radius: 20px;
   margin-top: 30px;
-  box-shadow: 5px 5px 5px rgb(71, 116, 150);
+  color: white;
+  max-width: 800px;
+}
+
+strong {
+  font-size: 33px;
+}
+
+p {
+  font-size: 20px;
 }
