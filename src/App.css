@@ -1,16 +1,22 @@
 .container {
   text-align: center;
   border: 1px solid rgb(193, 191, 191);
-  border-radius: 20px;
+  border-radius: 38px;
   margin-top: 30px;
   color: white;
   max-width: 800px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-image: url("../src/bg-box.png");
+  background-size: cover;
 }
 
 strong {
-  font-size: 33px;
+  font-size: 40px;
 }
 
 p {
-  font-size: 20px;
+  font-size: 26px;
+  margin-top: 10px;
+  margin-bottom: 75px;
 }
