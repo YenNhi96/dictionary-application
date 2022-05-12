@@ -1,22 +1,35 @@
 .container {
-  text-align: center;
-  border: 1px solid rgb(193, 191, 191);
-  border-radius: 38px;
-  margin-top: 30px;
-  color: white;
-  max-width: 800px;
-  padding-top: 30px;
-  padding-bottom: 50px;
-  background-image: url("../src/bg-box.png");
-  background-size: cover;
+  text-align: justify;
 }
 
 strong {
-  font-size: 40px;
+  font-size: 50px;
 }
 
-p {
-  font-size: 26px;
+.Pronounce {
+  font-size: 30px;
   margin-top: 10px;
-  margin-bottom: 75px;
+  margin-bottom: 36px;
+}
+
+.wordDisplay {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 38px;
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 90px;
+  background-image: url("../src/bg-box.png");
+  box-shadow: 1px 5px 20px #756da3;
+}
+
+.Result {
+  margin-top: -53px;
+  border: 1px solid white;
+  border-radius: 38px;
+  padding: 25px;
+  background-color: white;
+  box-shadow: 1px 5px 20px #b3acd7;
 }
