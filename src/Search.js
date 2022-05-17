@@ -2,24 +2,31 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./App.css";
 import Result from "./Result.js";
+import audioIcon from "./audio-player.png";
 
 export default function Search() {
   let [word, setWord] = useState("");
   let [result, setResult] = useState(null);
   let [headWord, setHeadWord] = useState("Landscape");
-  let [pronounce, setPronounce] = useState("ˈlændskeɪp");
+  let [pronounce, setPronounce] = useState("/ˈlændskeɪp/");
+  let [audio, setAudio] = useState("");
 
   function searchWord(response) {
-    setResult(response.data);
-    setHeadWord(response.data[0].meta.stems[0]);
-    setPronounce(response.data[0].hwi.prs[0].ipa);
+    setResult(response.data[0]);
+    setHeadWord(response.data[0].word);
+    setPronounce(response.data[0].phonetic);
+    setAudio(response.data[0].phonetics[0].audio);
+  }
+
+  function audioPlay() {
+    const audioPlayer = new Audio(`${audio}`);
+    audioPlayer.play();
   }
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    let apiKey = "c46996d4-6ecb-4f72-80e7-07ebf069ae04";
-    let apiUrl = `https://www.dictionaryapi.com/api/v3/references/learners/json/${word}?key=${apiKey}`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(apiUrl).then(searchWord);
   }
 
@@ -30,7 +37,13 @@ export default function Search() {
     <div className="Search">
       <div className="wordDisplay">
         <strong>{headWord}</strong>
-        <p className="Pronounce">/{pronounce}/</p>
+        <div className="Pronounce">
+          <p className="phonetic">{pronounce}</p>
+          <button onClick={audioPlay}>
+            <img className="audio-icon" src={audioIcon} alt="audio" />
+          </button>
+        </div>
+
         <form className="mb-3" onSubmit={handleSubmit}>
           <div className="row justify-content-center">
             <div className="col-6">

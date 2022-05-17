@@ -3,33 +3,56 @@
 }
 
 strong {
-  font-size: 50px;
+  font-size: 60px;
+  display: block;
+}
+
+button {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+  display: inline;
+}
+
+.audio-icon {
+  width: 25px;
+  padding: 0;
+  margin-left: 10px;
+  margin-bottom: -4px;
+}
+
+.phonetic {
+  font-size: 35px;
+  display: inline;
 }
 
 .Pronounce {
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 36px;
+  margin-bottom: 25px;
 }
 
 .wordDisplay {
   display: block;
   margin: 0 auto;
   text-align: center;
-  border: 1px solid white;
   border-radius: 38px;
   color: white;
-  padding-top: 25px;
-  padding-bottom: 90px;
+  padding-top: 20px;
+  padding-bottom: 80px;
   background-image: url("../src/bg-box.png");
   box-shadow: 1px 5px 20px #756da3;
 }
 
 .Result {
   margin-top: -53px;
-  border: 1px solid white;
   border-radius: 38px;
-  padding: 25px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
   background-color: white;
   box-shadow: 1px 5px 20px #b3acd7;
+}
+
+h4 {
+  padding-top: 40px;
 }
