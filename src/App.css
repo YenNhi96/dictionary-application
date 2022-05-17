@@ -1,5 +1,10 @@
 .container {
   text-align: justify;
+  margin-bottom: 68px;
+}
+
+.footer {
+  font-size: 15px;
 }
 
 strong {
@@ -45,6 +50,7 @@ button {
 
 .Result {
   margin-top: -53px;
+  margin-bottom: 20px;
   border-radius: 38px;
   padding-left: 40px;
   padding-right: 40px;

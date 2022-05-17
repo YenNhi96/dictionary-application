@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Result from "./Result.js";
 import audioIcon from "./audio-player.png";
@@ -7,9 +7,14 @@ import audioIcon from "./audio-player.png";
 export default function Search() {
   let [word, setWord] = useState("");
   let [result, setResult] = useState(null);
-  let [headWord, setHeadWord] = useState("Landscape");
-  let [pronounce, setPronounce] = useState("/ˈlændskeɪp/");
+  let [headWord, setHeadWord] = useState("");
+  let [pronounce, setPronounce] = useState("");
   let [audio, setAudio] = useState("");
+
+  useEffect(() => {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/welcome`;
+    axios.get(apiUrl).then(searchWord);
+  }, []);
 
   function searchWord(response) {
     setResult(response.data[0]);
