@@ -43,14 +43,14 @@ button {
   border-radius: 38px;
   color: white;
   padding-top: 20px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   background-image: url("../src/bg-box.png");
   box-shadow: 1px 5px 20px #756da3;
 }
 
-.Result {
-  margin-top: -53px;
-  margin-bottom: 20px;
+.SearchResult {
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 38px;
   padding-left: 40px;
   padding-right: 40px;
@@ -61,4 +61,13 @@ button {
 
 h4 {
   padding-top: 40px;
+}
+
+.Example strong {
+  font-size: 15px;
+  display: inline;
+}
+
+.Synonyms u {
+  font-size: 15px;
 }

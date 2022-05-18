@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Result from "./Result.js";
-import audioIcon from "./audio-player.png";
+import AudioPlay from "./AudioPlay.js";
 
 export default function Search() {
   let [word, setWord] = useState("");
@@ -23,11 +23,6 @@ export default function Search() {
     setAudio(response.data[0].phonetics[0].audio);
   }
 
-  function audioPlay() {
-    const audioPlayer = new Audio(`${audio}`);
-    audioPlayer.play();
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -44,9 +39,7 @@ export default function Search() {
         <strong>{headWord}</strong>
         <div className="Pronounce">
           <p className="phonetic">{pronounce}</p>
-          <button onClick={audioPlay}>
-            <img className="audio-icon" src={audioIcon} alt="audio" />
-          </button>
+          <AudioPlay source={audio} />
         </div>
 
         <form className="mb-3" onSubmit={handleSubmit}>
@@ -56,6 +49,7 @@ export default function Search() {
                 type="search"
                 className="form-control"
                 autoComplete="off"
+                placeholder="Type your word..."
                 onChange={wordTyping}
               />
             </div>
