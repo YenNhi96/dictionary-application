@@ -1,10 +1,12 @@
 .container {
-  text-align: justify;
   margin-bottom: 68px;
 }
 
 .footer {
   font-size: 15px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 strong {
@@ -40,23 +42,36 @@ button {
   display: block;
   margin: 0 auto;
   text-align: center;
-  border-radius: 38px;
+  border-radius: 28px;
   color: white;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  padding-top: 15px;
+  padding-bottom: 45px;
   background-image: url("../src/bg-box.png");
   box-shadow: 1px 5px 20px #756da3;
 }
 
 .SearchResult {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 38px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 28px;
+  padding-left: 38px;
+  padding-right: 25px;
+  padding-bottom: 25px;
   background-color: white;
   box-shadow: 1px 5px 20px #b3acd7;
+}
+
+section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 28px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 1px 5px 20px #b3acd7;
+}
+
+.Photos img {
+  border-radius: 22% 10%;
 }
 
 h4 {
@@ -66,6 +81,10 @@ h4 {
 .Example strong {
   font-size: 15px;
   display: inline;
+}
+
+.Example {
+  opacity: 0.65;
 }
 
 .Synonyms u {

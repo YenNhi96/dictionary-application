@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Result from "./Result.js";
 import AudioPlay from "./AudioPlay.js";
+import Photos from "./Photos.js";
 
 export default function Search() {
   let [word, setWord] = useState("");
@@ -10,10 +11,19 @@ export default function Search() {
   let [headWord, setHeadWord] = useState("");
   let [pronounce, setPronounce] = useState("");
   let [audio, setAudio] = useState("");
+  let [photo, setPhoto] = useState(null);
 
   useEffect(() => {
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/welcome`;
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/cool`;
     axios.get(apiUrl).then(searchWord);
+
+    let imageApikey =
+      "563492ad6f91700001000001f6f2f71e6e23437d8d3cc6caec8ed9a3 ";
+    let imageUrl = `https://api.pexels.com/v1/search?query=cool&per_page=9`;
+    let author = {
+      headers: { Authorization: `Bearer ${imageApikey}` },
+    };
+    axios.get(imageUrl, author).then(photoResponse);
   }, []);
 
   function searchWord(response) {
@@ -23,11 +33,23 @@ export default function Search() {
     setAudio(response.data[0].phonetics[0].audio);
   }
 
+  function photoResponse(response) {
+    setPhoto(response.data.photos);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(apiUrl).then(searchWord);
+
+    let imageApikey =
+      "563492ad6f91700001000001f6f2f71e6e23437d8d3cc6caec8ed9a3 ";
+    let imageUrl = `https://api.pexels.com/v1/search?query=${word}&per_page=9`;
+    let author = {
+      headers: { Authorization: `Bearer ${imageApikey}` },
+    };
+    axios.get(imageUrl, author).then(photoResponse);
   }
 
   function wordTyping(event) {
@@ -64,6 +86,7 @@ export default function Search() {
         </form>
       </div>
       <Result info={result} />
+      <Photos data={photo} />
     </div>
   );
 }
